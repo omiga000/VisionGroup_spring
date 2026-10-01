@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/Scau_Work/Taurus/VisionGroup_spring/build",
+  "command": "D:\\My_Compiler\\Msys2\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\main.dir\\Src\\main.cpp.obj -c D:\\Scau_Work\\Taurus\\VisionGroup_spring\\OOP\\Src\\main.cpp",
+  "file": "D:/Scau_Work/Taurus/VisionGroup_spring/OOP/Src/main.cpp",
+  "output": "D:/Scau_Work/Taurus/VisionGroup_spring/build/CMakeFiles/main.dir/Src/main.cpp.obj"
+}
+]
