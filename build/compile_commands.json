@@ -1,8 +1,20 @@
 [
 {
   "directory": "D:/Scau_Work/Taurus/VisionGroup_spring/build",
-  "command": "D:\\My_Compiler\\Msys2\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\main.dir\\Src\\main.cpp.obj -c D:\\Scau_Work\\Taurus\\VisionGroup_spring\\OOP\\Src\\main.cpp",
+  "command": "D:\\My_Compiler\\Msys2\\ucrt64\\bin\\g++.exe -g -o OOP\\CMakeFiles\\main.dir\\Src\\main.cpp.obj -c D:\\Scau_Work\\Taurus\\VisionGroup_spring\\OOP\\Src\\main.cpp",
   "file": "D:/Scau_Work/Taurus/VisionGroup_spring/OOP/Src/main.cpp",
-  "output": "D:/Scau_Work/Taurus/VisionGroup_spring/build/CMakeFiles/main.dir/Src/main.cpp.obj"
+  "output": "D:/Scau_Work/Taurus/VisionGroup_spring/build/OOP/CMakeFiles/main.dir/Src/main.cpp.obj"
+},
+{
+  "directory": "D:/Scau_Work/Taurus/VisionGroup_spring/build",
+  "command": "D:\\My_Compiler\\Msys2\\ucrt64\\bin\\g++.exe -isystem D:/My_Compiler/Msys2/ucrt64/include/opencv5 -g -o Opencv\\Base\\CMakeFiles\\Base.dir\\Src\\main.cpp.obj -c D:\\Scau_Work\\Taurus\\VisionGroup_spring\\Opencv\\Base\\Src\\main.cpp",
+  "file": "D:/Scau_Work/Taurus/VisionGroup_spring/Opencv/Base/Src/main.cpp",
+  "output": "D:/Scau_Work/Taurus/VisionGroup_spring/build/Opencv/Base/CMakeFiles/Base.dir/Src/main.cpp.obj"
+},
+{
+  "directory": "D:/Scau_Work/Taurus/VisionGroup_spring/build",
+  "command": "D:\\My_Compiler\\Msys2\\ucrt64\\bin\\g++.exe -isystem D:/My_Compiler/Msys2/ucrt64/include/opencv5 -g -o Opencv\\Base\\CMakeFiles\\find_hsv.dir\\Src\\find_hsv.cpp.obj -c D:\\Scau_Work\\Taurus\\VisionGroup_spring\\Opencv\\Base\\Src\\find_hsv.cpp",
+  "file": "D:/Scau_Work/Taurus/VisionGroup_spring/Opencv/Base/Src/find_hsv.cpp",
+  "output": "D:/Scau_Work/Taurus/VisionGroup_spring/build/Opencv/Base/CMakeFiles/find_hsv.dir/Src/find_hsv.cpp.obj"
 }
 ]

@@ -1,8 +1,8 @@
-# Install script for directory: D:/Scau_Work/Taurus/VisionGroup_spring/OOP
+# Install script for directory: D:/Scau_Work/Taurus/VisionGroup_spring
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Project")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/VisionGroup_spring")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -35,6 +35,13 @@ endif()
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "D:/My_Compiler/Msys2/ucrt64/bin/objdump.exe")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("D:/Scau_Work/Taurus/VisionGroup_spring/build/OOP/cmake_install.cmake")
+  include("D:/Scau_Work/Taurus/VisionGroup_spring/build/Opencv/cmake_install.cmake")
+
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
