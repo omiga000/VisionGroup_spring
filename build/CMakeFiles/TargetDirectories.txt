@@ -11,3 +11,6 @@ D:/Scau_Work/Taurus/VisionGroup_spring/build/Opencv/Base/CMakeFiles/Video.dir
 D:/Scau_Work/Taurus/VisionGroup_spring/build/Opencv/Base/CMakeFiles/Cat.dir
 D:/Scau_Work/Taurus/VisionGroup_spring/build/Opencv/Base/CMakeFiles/edit_cache.dir
 D:/Scau_Work/Taurus/VisionGroup_spring/build/Opencv/Base/CMakeFiles/rebuild_cache.dir
+D:/Scau_Work/Taurus/VisionGroup_spring/build/Opencv/Application/CMakeFiles/apple.dir
+D:/Scau_Work/Taurus/VisionGroup_spring/build/Opencv/Application/CMakeFiles/edit_cache.dir
+D:/Scau_Work/Taurus/VisionGroup_spring/build/Opencv/Application/CMakeFiles/rebuild_cache.dir

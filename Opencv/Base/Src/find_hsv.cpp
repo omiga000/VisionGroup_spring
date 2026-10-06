@@ -5,12 +5,13 @@ using namespace std;
 using namespace cv;
 
 int h_min = 0, h_max = 179;
+int h1_min = 0, h1_max = 179;
 int s_min = 0, s_max = 255;
 int v_min = 0, v_max = 255;
 int main() {
     // Your code here
 
-    Mat img = imread("D:/Scau_Work/Taurus/VisionGroup_spring/Image/01.png");
+    Mat img = imread("D:/Scau_Work/Taurus/VisionGroup_spring/Image/apple.png");
 
     if(img.empty()) {
         cout << "图片读取失败" << endl;
@@ -23,19 +24,24 @@ int main() {
 
     createTrackbar("H_min", "hsv", &h_min, 179);
     createTrackbar("H_max", "hsv", &h_max, 179);
+    createTrackbar("H1_min", "hsv", &h1_min, 179);
+    createTrackbar("H1_max","hsv", &h1_max, 179);
     createTrackbar("S_min", "hsv", &s_min, 255);
     createTrackbar("S_max", "hsv", &s_max, 255);
     createTrackbar("V_min", "hsv", &v_min, 255);
     createTrackbar("V_max", "hsv", &v_max, 255);
 
-    Mat hsv_img, mask, result;
+    Mat hsv_img, mask, mask1,result;
     cvtColor(img, hsv_img, COLOR_BGR2HSV);
     while(true) {
         
         inRange(hsv_img, Scalar(h_min, s_min, v_min), Scalar(h_max, s_max, v_max), mask);
+        inRange(hsv_img, Scalar(h1_min, s_min, v_min), Scalar(h1_max, s_max, v_max), mask1);
+        bitwise_or(mask, mask1, result);
         
-
-        imshow("hsv", mask);
+        imshow("Image", img);
+        imshow("hsv", result);
+        
 
         char key = (char)waitKey(30);
         if(key=='s')
