@@ -22,5 +22,11 @@
   "command": "D:\\My_Compiler\\Msys2\\ucrt64\\bin\\g++.exe -isystem D:/My_Compiler/Msys2/ucrt64/include/opencv5 -g -o Opencv\\Base\\CMakeFiles\\Video.dir\\Src\\Video.cpp.obj -c D:\\Scau_Work\\Taurus\\VisionGroup_spring\\Opencv\\Base\\Src\\Video.cpp",
   "file": "D:/Scau_Work/Taurus/VisionGroup_spring/Opencv/Base/Src/Video.cpp",
   "output": "D:/Scau_Work/Taurus/VisionGroup_spring/build/Opencv/Base/CMakeFiles/Video.dir/Src/Video.cpp.obj"
+},
+{
+  "directory": "D:/Scau_Work/Taurus/VisionGroup_spring/build",
+  "command": "D:\\My_Compiler\\Msys2\\ucrt64\\bin\\g++.exe -isystem D:/My_Compiler/Msys2/ucrt64/include/opencv5 -g -o Opencv\\Base\\CMakeFiles\\Cat.dir\\Src\\Cat.cpp.obj -c D:\\Scau_Work\\Taurus\\VisionGroup_spring\\Opencv\\Base\\Src\\Cat.cpp",
+  "file": "D:/Scau_Work/Taurus/VisionGroup_spring/Opencv/Base/Src/Cat.cpp",
+  "output": "D:/Scau_Work/Taurus/VisionGroup_spring/build/Opencv/Base/CMakeFiles/Cat.dir/Src/Cat.cpp.obj"
 }
 ]

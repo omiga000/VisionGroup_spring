@@ -278,6 +278,45 @@ build Opencv/Base/Video.exe: CXX_EXECUTABLE_LINKER__Video_Debug Opencv/Base/CMak
   TARGET_SUPPORT_DIR = Opencv\Base\CMakeFiles\Video.dir
   RSP_FILE = CMakeFiles\Video.rsp
 
+# =============================================================================
+# Object build statements for EXECUTABLE target Cat
+
+
+#############################################
+# Order-only phony target for Cat
+
+build cmake_object_order_depends_target_Cat: phony || .
+
+build Opencv/Base/CMakeFiles/Cat.dir/Src/Cat.cpp.obj: CXX_COMPILER__Cat_unscanned_Debug D$:/Scau_Work/Taurus/VisionGroup_spring/Opencv/Base/Src/Cat.cpp || cmake_object_order_depends_target_Cat
+  CONFIG = Debug
+  DEP_FILE = Opencv\Base\CMakeFiles\Cat.dir\Src\Cat.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -isystem D:/My_Compiler/Msys2/ucrt64/include/opencv5
+  OBJECT_DIR = Opencv\Base\CMakeFiles\Cat.dir
+  OBJECT_FILE_DIR = Opencv\Base\CMakeFiles\Cat.dir\Src
+  TARGET_SUPPORT_DIR = Opencv\Base\CMakeFiles\Cat.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Cat
+
+
+#############################################
+# Link the executable Opencv\Base\Cat.exe
+
+build Opencv/Base/Cat.exe: CXX_EXECUTABLE_LINKER__Cat_Debug Opencv/Base/CMakeFiles/Cat.dir/Src/Cat.cpp.obj | D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_stitching.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_alphamat.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_bgsegm.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_ccalib.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_cvv.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_dnn_objdetect.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_dnn_superres.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_dpm.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_face.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_freetype.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_fuzzy.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_gapi.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_hdf.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_hfs.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_img_hash.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_intensity_transform.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_line_descriptor.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_ovis.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_quality.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_rapid.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_reg.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_rgbd.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_saliency.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_sfm.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_signal.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_structured_light.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_superres.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_surface_matching.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_videostab.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_viz.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_wechat_qrcode.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_xfeatures2d.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_xobjdetect.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_xphoto.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_xstereo.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_ptcloud.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_shape.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_calib.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_phase_unwrapping.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_optflow.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_ximgproc.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_objdetect.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_photo.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_stereo.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_tracking.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_highgui.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_video.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_videoio.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_datasets.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_imgcodecs.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_plot.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_text.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_features.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_dnn.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_imgproc.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_ml.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_geometry.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_flann.dll.a D$:/My_Compiler/Msys2/ucrt64/lib/libopencv_core.dll.a
+  CONFIG = Debug
+  FLAGS = -g
+  LINK_LIBRARIES = D:/My_Compiler/Msys2/ucrt64/lib/libopencv_stitching.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_alphamat.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_bgsegm.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_ccalib.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_cvv.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_dnn_objdetect.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_dnn_superres.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_dpm.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_face.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_freetype.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_fuzzy.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_gapi.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_hdf.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_hfs.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_img_hash.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_intensity_transform.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_line_descriptor.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_ovis.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_quality.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_rapid.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_reg.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_rgbd.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_saliency.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_sfm.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_signal.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_structured_light.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_superres.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_surface_matching.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_videostab.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_viz.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_wechat_qrcode.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_xfeatures2d.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_xobjdetect.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_xphoto.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_xstereo.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_ptcloud.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_shape.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_calib.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_phase_unwrapping.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_optflow.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_ximgproc.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_objdetect.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_photo.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_stereo.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_tracking.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_highgui.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_video.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_videoio.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_datasets.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_imgcodecs.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_plot.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_text.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_features.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_dnn.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_imgproc.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_ml.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_geometry.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_flann.dll.a  D:/My_Compiler/Msys2/ucrt64/lib/libopencv_core.dll.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = Opencv\Base\CMakeFiles\Cat.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Opencv\Base\Cat.exe
+  TARGET_IMPLIB = Opencv\Base\libCat.dll.a
+  TARGET_PDB = Cat.exe.dbg
+  TARGET_SUPPORT_DIR = Opencv\Base\CMakeFiles\Cat.dir
+  RSP_FILE = CMakeFiles\Cat.rsp
+
 
 #############################################
 # Utility command for edit_cache
@@ -307,6 +346,10 @@ build Opencv/Base/rebuild_cache: phony Opencv/Base/CMakeFiles/rebuild_cache.util
 build Base: phony Opencv/Base/Base.exe
 
 build Base.exe: phony Opencv/Base/Base.exe
+
+build Cat: phony Opencv/Base/Cat.exe
+
+build Cat.exe: phony Opencv/Base/Cat.exe
 
 build Video: phony Opencv/Base/Video.exe
 
@@ -349,7 +392,7 @@ build Opencv/all: phony Opencv/Base/all
 #############################################
 # Folder: D:/Scau_Work/Taurus/VisionGroup_spring/build/Opencv/Base
 
-build Opencv/Base/all: phony Opencv/Base/Base.exe Opencv/Base/find_hsv.exe Opencv/Base/Video.exe
+build Opencv/Base/all: phony Opencv/Base/Base.exe Opencv/Base/find_hsv.exe Opencv/Base/Video.exe Opencv/Base/Cat.exe
 
 # =============================================================================
 # Built-in targets

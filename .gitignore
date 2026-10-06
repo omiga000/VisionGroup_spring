@@ -4,6 +4,11 @@ build-*/
 cmake-build-*/
 out/
 
+#图片
+*.jpg
+*.png
+
+
 # CMake / clangd 生成物
 CMakeCache.txt
 CMakeFiles/
