@@ -3,7 +3,7 @@
 #include <opencv2/geometry.hpp> 
 using namespace std;
 using namespace cv;
-
+//图片路径
 string imgPath = "D:/Scau_Work/Taurus/VisionGroup_spring/Image/apple.png";
 Mat img = imread(imgPath);
 
