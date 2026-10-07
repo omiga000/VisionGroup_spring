@@ -11,7 +11,7 @@ int v_min = 0, v_max = 255;
 int main() {
     // Your code here
 
-    Mat img = imread("D:/Scau_Work/Taurus/VisionGroup_spring/Image/apple.png");
+    Mat img = imread("D:/Scau_Work/Taurus/VisionGroup_spring/Image/armor.png");
 
     if(img.empty()) {
         cout << "图片读取失败" << endl;
@@ -19,13 +19,15 @@ int main() {
     }
 
     namedWindow("hsv", WINDOW_NORMAL);
-    resizeWindow("hsv", 600, 400);
+    resizeWindow("hsv",640,480);
+    namedWindow("Image",WINDOW_NORMAL);
+    resizeWindow("Image",640,480);
 
 
     createTrackbar("H_min", "hsv", &h_min, 179);
     createTrackbar("H_max", "hsv", &h_max, 179);
-    createTrackbar("H1_min", "hsv", &h1_min, 179);
-    createTrackbar("H1_max","hsv", &h1_max, 179);
+   // createTrackbar("H1_min", "hsv", &h1_min, 179);
+    //createTrackbar("H1_max","hsv", &h1_max, 179);
     createTrackbar("S_min", "hsv", &s_min, 255);
     createTrackbar("S_max", "hsv", &s_max, 255);
     createTrackbar("V_min", "hsv", &v_min, 255);
@@ -36,11 +38,11 @@ int main() {
     while(true) {
         
         inRange(hsv_img, Scalar(h_min, s_min, v_min), Scalar(h_max, s_max, v_max), mask);
-        inRange(hsv_img, Scalar(h1_min, s_min, v_min), Scalar(h1_max, s_max, v_max), mask1);
-        bitwise_or(mask, mask1, result);
+        //inRange(hsv_img, Scalar(h1_min, s_min, v_min), Scalar(h1_max, s_max, v_max), mask1);
+        //bitwise_or(mask, mask1, result);
         
         imshow("Image", img);
-        imshow("hsv", result);
+        imshow("hsv", mask);
         
 
         char key = (char)waitKey(30);
