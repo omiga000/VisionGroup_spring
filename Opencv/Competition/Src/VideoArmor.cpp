@@ -2,6 +2,8 @@
 #include <chrono>
 #include <opencv2/opencv.hpp>
 #include<opencv2/geometry.hpp>
+#include <opencv2/calib3d.hpp>
+
 
 using namespace std;
 using namespace cv;
@@ -13,6 +15,17 @@ string imgPath = "D:/Scau_Work/Taurus/VisionGroup_spring/Image/video_armor.mp4";
 int h_min = 0,   h_max = 179;
 int s_min = 0,   s_max = 255;
 int v_min = 150, v_max = 255;
+
+float W = 134.0f;
+float H = 55.0f;
+
+std::vector<cv::Point3f> objectPoints = {
+    {-W / 2, -H / 2, 0},
+    { W / 2, -H / 2, 0},
+    { W / 2,  H / 2, 0},
+    {-W / 2,  H / 2, 0}
+};
+Mat K,D;
 
 int main()
 {
@@ -32,6 +45,19 @@ int main()
     double fps = 0;
     int    frame_count = 0;
     auto   fps_start = chrono::steady_clock::now();
+
+    // 1. 打开 YAML 文件
+    FileStorage fs("D:/Scau_Work/Taurus/VisionGroup_spring/build/Opencv/Application/camera_calibration.yml", FileStorage::READ);
+
+    if (!fs.isOpened())
+    {
+        cerr << "无法打开 camera.yaml" << endl;
+        return -1;
+    }
+
+    // 2. 读取相机内参和畸变系数
+    fs["camera_matrix"] >> K;
+    fs["distortion_coefficients"] >> D;
 
     while (true)
     {
@@ -110,6 +136,49 @@ int main()
                     armorRect.points(v3);
                     for (int m = 0; m < 4; m++)
                         line(frame, v3[m], v3[(m + 1) % 4], Scalar(0, 0, 255), 2);
+                    
+                    vector<Point2f> imagePoints = {
+                        v3[1], v3[2], v3[3], v3[0]
+                    };
+
+                    Mat rvec, tvec;
+
+                    bool success = solvePnP(
+                        objectPoints,
+                        imagePoints,
+                        K,
+                        D,
+                        rvec,
+                        tvec
+                    );
+
+                    if (success)
+                    {
+                        // 直线距离，单位 mm
+                        double distance = norm(tvec);
+
+                        // 显示距离，转换为 m
+                        putText(
+                            frame,
+                            cv::format("Distance: %.2f m",
+                                   distance / 1000.0),
+                            Point(10, 110),
+                            FONT_HERSHEY_SIMPLEX,
+                            0.8,
+                            Scalar(0, 255, 0),
+                            2
+                        );
+
+                        // 控制台输出
+                        cout << "Distance: "
+                             << distance / 1000.0
+                             << " m" << endl;
+                    }
+                    else
+                    {
+                        cout << "solve fail!" << endl;
+                    }
+
                 }
             }
         }
@@ -134,6 +203,7 @@ int main()
                 Point(10, 30), FONT_HERSHEY_SIMPLEX, 1, Scalar(0, 255, 0), 2);
         putText(frame, string("Time: ") + to_string((int)frame_ms.count()) + " ms",
                 Point(10, 70), FONT_HERSHEY_SIMPLEX, 1, Scalar(0, 255, 0), 2);
+        
 
         // ---------- 7. 显示 ----------
         imshow("Armor", frame);

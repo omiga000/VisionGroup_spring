@@ -1,5 +1,6 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
+#include <opencv2/calib3d.hpp>
 
 using namespace std;
 using namespace cv;
@@ -64,8 +65,8 @@ int main()
 
         // 查找棋盘格角点
         vector<Point2f> corners;
-        bool found = findChessboardCorners(gray, boardSize, corners,
-            CALIB_CB_ADAPTIVE_THRESH + CALIB_CB_NORMALIZE_IMAGE);
+        bool found = findChessboardCorners(gray, boardSize, corners);
+        //bool found=findChessboardCorners(gray,boardSize,corners);
 
         if (!found)
         {
@@ -81,6 +82,13 @@ int main()
         objectPoints.push_back(corners3D);
         imagePoints.push_back(corners);
         successCount++;
+
+        drawChessboardCorners(
+            img, boardSize, corners, found
+        );
+
+        imshow("Corners", img);
+        waitKey(100);
 
         cout << "[" << i << "] OK, corners: " << corners.size() << endl;
     }
@@ -117,5 +125,11 @@ int main()
     fs.release();
 
     cout << "Parameters saved to camera_calibration.yml" << endl;
+
+
+
+    //bool success=solvePnP(objectPoints,imagePoints,cameraMatrix,distCoeffs,rvecs,tvecs);
+
+
     return 0;
 }

@@ -68,7 +68,7 @@ int main()
             double rat=h/w;
 
             if (contourArea(contours[i]) < 100) continue;
-            
+            if(rect.center.y<frame.size().height/3){continue;}
             if(contourArea(contours[i])<1000&&rat>1.5){continue;}
             
 
