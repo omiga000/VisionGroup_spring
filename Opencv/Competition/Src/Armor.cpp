@@ -9,6 +9,7 @@ Mat img = imread(imgPath);
 Mat mask;
 void dectect_light()
 {
+    Mat img_clone=img.clone();
      Mat hsv;
     cvtColor(img,hsv,COLOR_BGR2HSV);
 
@@ -44,6 +45,8 @@ void dectect_light()
         //画出中心
         circle(img,(Point)rect.center,2,Scalar(0,255,0),2);
     }
+
+    Rect roi_rect;
 
     for(int i=0;i<lightRects.size()-1;i++)
     {
@@ -85,16 +88,25 @@ void dectect_light()
             }
 
             // 1. 把 RotatedRect 转成外接正矩形 Rect
-            Rect roi_rect = armorRect.boundingRect();
-            roi_rect &= Rect(0, 0, img.cols, img.rows);  // 防止越界
+            roi_rect = armorRect.boundingRect();
+
+            // 2. 向四周扩大 20 像素
+                int padding = 20;
+
+                roi_rect.x -= padding;
+                roi_rect.y -= padding;
+                roi_rect.width += 2 * padding;
+                roi_rect.height += 2 * padding;
+                roi_rect &= Rect(0, 0, img.cols, img.rows);  // 防止越界
 
             // 2. 裁剪 ROI
-            Mat roi = img(roi_rect).clone();
+            Mat roi = img_clone(roi_rect);
 
             // 3. 窗口名用 to_string 拼接
             imshow("armor_roi_" + to_string(i) + "_" + to_string(j), roi);
         }
     }
+            
 }
 
 

@@ -16,8 +16,8 @@ int h_min = 0,   h_max = 179;
 int s_min = 0,   s_max = 255;
 int v_min = 150, v_max = 255;
 
-float W = 134.0f;
-float H = 55.0f;
+float W = 135.0f;
+float H = 62.0f;
 
 std::vector<cv::Point3f> objectPoints = {
     {-W / 2, -H / 2, 0},
