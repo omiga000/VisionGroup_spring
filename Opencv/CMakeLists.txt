@@ -1,3 +1,5 @@
 add_subdirectory(Base)
 add_subdirectory(Application)
 add_subdirectory(Competition)
+add_subdirectory(Practise)
+

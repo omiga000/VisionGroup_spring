@@ -11,7 +11,7 @@ int v_min = 0, v_max = 255;
 int main() {
     // Your code here
 
-    Mat img = imread("D:/Scau_Work/Taurus/VisionGroup_spring/Image/armor.png");
+    Mat img = imread("D:/Scau_Work/Taurus/VisionGroup_spring/images/01.jpg");
 
     if(img.empty()) {
         cout << "图片读取失败" << endl;

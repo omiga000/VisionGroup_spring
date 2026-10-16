@@ -1,12 +1,15 @@
 #include<iostream>
 #include<opencv2/opencv.hpp>
 #include <opencv2/geometry.hpp> 
+#include <opencv2/dnn.hpp>
 using namespace std;
 using namespace cv;
 //图片路径
 string imgPath = "D:/Scau_Work/Taurus/VisionGroup_spring/Image/armor.png";
+string modelPath= "D:/Scau_Work/Taurus/VisionGroup_spring/tutorials/armor_number/model/mlp.onnx";
 Mat img = imread(imgPath);
-Mat mask;
+Mat mask,input;
+dnn::Net net;
 void dectect_light()
 {
     Mat img_clone=img.clone();
@@ -58,7 +61,7 @@ void dectect_light()
 
             double diff=abs(rect.angle-rect1.angle);
 
-            if(diff>90){diff=diff-180;}
+            if(diff>90){diff=180-diff;}
 
             if(diff>10){continue;}
 
@@ -102,8 +105,35 @@ void dectect_light()
             // 2. 裁剪 ROI
             Mat roi = img_clone(roi_rect);
 
-            // 3. 窗口名用 to_string 拼接
-            imshow("armor_roi_" + to_string(i) + "_" + to_string(j), roi);
+           // 将装甲板区域转换为灰度图
+            Mat gray;
+            cvtColor(roi, gray, COLOR_BGR2GRAY);
+
+            int numberWidth = cvRound(gray.cols * 0.45);
+            int numberX = (gray.cols - numberWidth) / 2;
+
+            Rect numberRect(numberX, 0, numberWidth, gray.rows);
+
+            Mat number=gray(numberRect);
+           
+
+
+
+            Mat binary;
+
+           
+            threshold(number, binary, 0, 255, THRESH_BINARY | THRESH_OTSU);
+
+
+            // 显示灰度图
+            string windowName = "Binary_" + to_string(i) + "_" + to_string(j);
+            namedWindow(windowName, WINDOW_NORMAL);
+            imshow(windowName, binary);
+
+
+
+            
+            resize(binary,input,Size(20,28),0,0,INTER_NEAREST);
         }
     }
             
@@ -118,6 +148,14 @@ int main()
         cout<<"img is empty!"<<endl;
         return -1;
     }
+    try {
+    net = dnn::readNetFromONNX(modelPath, dnn::ENGINE_CLASSIC);
+    cout << "success" << endl;
+}
+catch (const cv::Exception& e) {
+    cerr << "unsuccess" << e.what() << endl;
+    return -1;
+}
 
     namedWindow("Image",WINDOW_NORMAL);
     resizeWindow("Image",640,480);
@@ -128,9 +166,17 @@ int main()
     
     dectect_light();
 
+    Mat blob=dnn::blobFromImage(input,1.0/255.0);
+
+
+    net.setInput(blob);
+
     imshow("mask",mask);
     imshow("Image",img);
 
+    Mat scores=net.forward();
+
+    cout << "Output" << scores << endl;
     waitKey(0);
 
     return 0;

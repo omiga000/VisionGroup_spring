@@ -65,6 +65,7 @@ int main()
         findContours(mask, contours, hierarchy,RETR_TREE, CHAIN_APPROX_SIMPLE);
         for(int i=0;i<contours.size();i++)
         {
+            //寻找扇叶轮廓
             if(hierarchy[i][3]!=-1){continue;}
             RotatedRect rect = minAreaRect(contours[i]);
             double h=max(rect.size.height,rect.size.width);
@@ -72,6 +73,9 @@ int main()
             if(w<1){continue;}
             double rat=h/w;
             double area = contourArea(contours[i]);
+
+
+
         if(area>200&&area<500&&rat>0.8&&rat<1.2&&hierarchy[i][2]==-1){
             circle(frame,rect.center,10,Scalar(255,255,0),2);
         }
@@ -123,10 +127,6 @@ int main()
             rect.points(v);
             for (int j = 0; j < 4; j++)
                 line(frame, v[j], v[(j + 1) % 4], Scalar(0, 255, 255), 2);
-
-            
-            
-               
         }
        
 
